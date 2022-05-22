@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:github_api_flutter/core/utils/size_util.dart';
 
+import '../../../core/translations/languages/language_keys.dart';
+import '../../../core/utils/size_util.dart';
+import '../../../core/values/images.dart';
 import 'controller.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -29,18 +32,22 @@ class DashboardPage extends StatelessWidget {
           bottomNavigationBar: BottomNavigationBar(
             onTap: controller.changeTabIndex,
             currentIndex: controller.tabIndex,
-            items: const [
+            items: [
               BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.home_outlined,
+                activeIcon: SvgPicture.asset(icCommits),
+                icon: SvgPicture.asset(
+                  icCommits,
+                  color: Get.theme.bottomNavigationBarTheme.unselectedItemColor,
                 ),
-                label: 'Commits',
+                label: tr_commits,
               ),
               BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.history_toggle_off,
+                activeIcon: SvgPicture.asset(icUser),
+                icon: SvgPicture.asset(
+                  icUser,
+                  color: Get.theme.bottomNavigationBarTheme.unselectedItemColor,
                 ),
-                label: 'User',
+                label: tr_user,
               ),
             ],
           ),
