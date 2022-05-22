@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:github_api_flutter/core/theme/app_theme.dart';
+import '../core/theme/app_theme.dart';
 
 import '../routes/pages.dart';
 

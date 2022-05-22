@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:github_api_flutter/app/modules/commits/binding.dart';
-import 'package:github_api_flutter/app/modules/commits/page.dart';
-import 'package:github_api_flutter/app/modules/user/binding.dart';
-import 'package:github_api_flutter/app/modules/user/page.dart';
+import '../app/modules/commits/binding.dart';
+import '../app/modules/commits/page.dart';
+import '../app/modules/user/binding.dart';
+import '../app/modules/user/page.dart';
 import '../app/modules/dashboard/binding.dart';
 import '../app/modules/dashboard/page.dart';
 part './routes.dart';
