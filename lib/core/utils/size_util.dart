@@ -12,8 +12,8 @@ import 'package:flutter/material.dart';
 //SizeUtil.size = MediaQuery.of(context).size;
 //
 class SizeUtil {
-  static const DESIGN_WIDTH = 375.0;
-  static const DESIGN_HEIGHT = 812.0;
+  static const _designWidth = 375.0;
+  static const _designHeight = 812.0;
 
   //logic size in device
   static Size? _logicSize;
@@ -34,18 +34,18 @@ class SizeUtil {
 
   //@param w is the design w;
   static double  getAxisX(double w) {
-    return (w * width) / DESIGN_WIDTH;
+    return (w * width) / _designWidth;
   }
 
 // the y direction
   static double getAxisY(double h) {
-    return (h * height) / DESIGN_HEIGHT;
+    return (h * height) / _designHeight;
   }
 
   // diagonal direction value with design size s.
   static double getAxisBoth(double s) {
     return s *
         sqrt((width * width + height * height) /
-            (DESIGN_WIDTH * DESIGN_WIDTH + DESIGN_HEIGHT * DESIGN_HEIGHT));
+            (_designWidth * _designWidth + _designHeight * _designHeight));
   }
 }

@@ -4,15 +4,15 @@ import 'package:get/get.dart';
 
 import 'languages/languages.dart';
 
-const Locale US_ENGLISH = Locale("en", "US");
-const Locale FRANCE_FRENCH = Locale("fr", "FR");
+const Locale usEnglish = Locale("en", "US");
+const Locale franceFrench = Locale("fr", "FR");
 
 class LocalizationService extends Translations {
   // Default locale
-  static const locale = US_ENGLISH;
+  static const locale = usEnglish;
 
   // fallbackLocale saves the day when the locale gets in trouble
-  static const fallbackLocale = US_ENGLISH;
+  static const fallbackLocale = usEnglish;
 
   // Supported languages
   // Needs to be same order with locales
@@ -24,8 +24,8 @@ class LocalizationService extends Translations {
   // Supported locales
   // Needs to be same order with langs
   static final locales = [
-    US_ENGLISH,
-    FRANCE_FRENCH,
+    usEnglish,
+    franceFrench,
   ];
 
   // Keys and their translations

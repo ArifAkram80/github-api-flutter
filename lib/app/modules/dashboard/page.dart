@@ -37,7 +37,7 @@ class DashboardPage extends StatelessWidget {
                   icCommits,
                   color: Get.theme.bottomNavigationBarTheme.unselectedItemColor,
                 ),
-                label: tr_commits,
+                label: trCommits,
               ),
               BottomNavigationBarItem(
                 activeIcon: SvgPicture.asset(icUser),
@@ -45,7 +45,7 @@ class DashboardPage extends StatelessWidget {
                   icUser,
                   color: Get.theme.bottomNavigationBarTheme.unselectedItemColor,
                 ),
-                label: tr_user,
+                label: trUser,
               ),
             ],
           ),

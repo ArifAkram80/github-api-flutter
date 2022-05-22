@@ -5,8 +5,8 @@ import 'package:http/http.dart' as http;
 import 'package:http_interceptor/http_interceptor.dart';
 
 import '../../../../core/utils/app_info.dart';
-import 'apiExceptions.dart';
-import 'networkInterceptor.dart';
+import 'api_exceptions.dart';
+import 'network_interceptor.dart';
 
 class ApiClient {
   // static Map<String, String> _headers = Map();
@@ -78,9 +78,9 @@ class ApiClient {
   }
 
   Future<Map<String, String>> _getHeaders() async {
-    String? token = "";
+    String token = "";
     return {
-      if (token != null) "Authorization": "Token $token",
+      "Authorization": "Token $token",
       "content-type": "application/json"
     };
   }

@@ -1,14 +1,10 @@
 import 'package:http/http.dart';
 
 class CustomException implements Exception {
-  final message;
-  final reason;
+  final String? message;
+  final String? reason;
 
   CustomException([this.message, this.reason]);
-
-  String toString() {
-    return "$message";
-  }
 }
 
 class FetchDataException extends CustomException {
@@ -18,7 +14,7 @@ class FetchDataException extends CustomException {
 }
 
 class BadRequestException extends CustomException {
-  Response? response;   
+  Response? response;
   BadRequestException([message, this.response])
       : super(message, "Invalid Request:  ${response?.body}");
 }
