@@ -1,0 +1,20 @@
+const hello = "Hello";
+const tr_app_name = "Text on Photo";
+const tr_text = "text";
+const tr_sticker = "sticker";
+const tr_shapes = "shapes";
+const tr_background = "background";
+const tr_styled_text = "styled Text";
+const tr_filter = "filter";
+const tr_canvas = "canvas";
+const tr_scale = "scale";
+const tr_size = "size";
+const tr_rotate = "rotate";
+const tr_move = "move";
+const tr_font = "font";
+const tr_style = "style";
+const tr_color = "color";
+const tr_opacity = "opacity";
+const tr_permission = "Needs your permission to work";
+const tr_background_none =
+    "If you want to add background to your text. Please select a color/gradient and adjust it accordingly from adjust option.";
