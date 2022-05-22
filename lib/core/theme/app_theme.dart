@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../utils/size_util.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../core/values/colors.dart';
@@ -12,12 +11,20 @@ abstract class AppThemeData {
     primaryColorDark: colorPrimaryDark,
     canvasColor: colorPrimaryLight,
     errorColor: colorError,
-    hintColor: colorHint,
     visualDensity: VisualDensity.adaptivePlatformDensity,
     textTheme: appTextTheme,
     dialogBackgroundColor: colorPrimary,
     appBarTheme: const AppBarTheme(
       color: colorPrimaryDark,
+    ),
+    cardTheme: const CardTheme(
+      color: colorCard,
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(24),
+        ),
+      ),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: colorPrimaryDark,

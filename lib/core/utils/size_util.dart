@@ -33,7 +33,7 @@ class SizeUtil {
   }
 
   //@param w is the design w;
-  static double getAxisX(double w) {
+  static double  getAxisX(double w) {
     return (w * width) / DESIGN_WIDTH;
   }
 

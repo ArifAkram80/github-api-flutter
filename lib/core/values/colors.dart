@@ -8,4 +8,9 @@ const Color colorOnPrimaryLight = Color(0xff758290);
 const Color colorSecondary = Color(0xff0A84FF);
 const Color colorOnAccent = Color(0xffffffff);
 const Color colorError = Color(0xffb71c1c);
-const Color colorHint = Color(0xff515050);
+
+const Color colorCard = Color(0xff515050);
+
+// Text Color
+const Color colorUsername = Color(0xff9B9B9B);
+const Color colorDateTime = Color(0xffB8B8B8);
