@@ -7,7 +7,6 @@ class NetworkInterceptor implements InterceptorContract {
 
   @override
   Future<RequestData> interceptRequest({required RequestData data}) async {
-    //  print("onRequest ${data.url}  ${data.headers}");
     logger.i(
         "OnHttpRequest  ${data.url}  header ${data.headers}  body ${data.body}");
     return data;

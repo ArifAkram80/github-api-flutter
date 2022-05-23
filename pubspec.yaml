@@ -39,15 +39,16 @@ dependencies:
   get: 4.6.1
   cached_network_image:
   shimmer: 
-  logger: 
-  dio:
-  json_annotation:
+  logger: any
   #used for testing on diff devices. 
   device_preview:
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner: any  
+  json_serializable: ^6.2.0
+  json_annotation: ^4.5.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
