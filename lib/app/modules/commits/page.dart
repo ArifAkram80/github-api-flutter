@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:github_api_flutter/app/modules/commits/widgets/commit_header.dart';
-import 'package:github_api_flutter/app/modules/commits/widgets/commits_list.dart';
+import 'widgets/commit_header.dart';
+import 'widgets/commits_list.dart';
 
 import '../../../core/utils/size_util.dart';
 

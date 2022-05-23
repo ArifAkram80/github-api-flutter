@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:github_api_flutter/core/utils/size_util.dart';
 
+import '../../../../core/utils/size_util.dart';
 import 'commit_item.dart';
 
 class CommitsList extends StatelessWidget {

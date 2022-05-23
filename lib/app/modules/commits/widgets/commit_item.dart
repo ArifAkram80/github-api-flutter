@@ -1,8 +1,10 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:github_api_flutter/core/utils/size_util.dart';
-import 'package:github_api_flutter/core/values/colors.dart';
+
+import '../../../../core/utils/size_util.dart';
+import '../../../../core/values/colors.dart';
+import '../../../../core/values/images.dart';
+import '../../../widgets/wig_circular_network_image.dart';
 
 class CommitListItem extends StatelessWidget {
   const CommitListItem({Key? key}) : super(key: key);
@@ -23,8 +25,7 @@ class CommitListItem extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Flexible(
-                flex: 7,
+              Expanded(
                 child: Text(
                   "Add module to login and register so that others can add features.",
                   style: Get.textTheme.bodyText1,
@@ -33,7 +34,9 @@ class CommitListItem extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-              const Spacer(),
+              SizedBox(
+                width: SizeUtil.getAxisX(12),
+              ),
               Text(
                 "09:18",
                 style: Get.textTheme.caption?.copyWith(
@@ -51,17 +54,8 @@ class CommitListItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Container(
-                  width: SizeUtil.getAxisX(20),
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                      image: CachedNetworkImageProvider(
-                        "https://avatars.githubusercontent.com/u/48603081?v=4",
-                      ),
-                    ),
-                  ),
-                ),
+                CircularNetworkImage(
+                    url: imgDummyImage, dimension: SizeUtil.getAxisX(20)),
                 SizedBox(
                   width: SizeUtil.getAxisX(8),
                 ),

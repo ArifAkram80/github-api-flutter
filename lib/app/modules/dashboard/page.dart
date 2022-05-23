@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:github_api_flutter/app/modules/commits/page.dart';
-import 'package:github_api_flutter/app/modules/user/page.dart';
+import '../commits/page.dart';
+import '../user/page.dart';
 
 import '../../../core/translations/languages/language_keys.dart';
 import '../../../core/utils/size_util.dart';
