@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 //
 class SizeUtil {
   static const _designWidth = 375.0;
-  static const _designHeight = 812.0;
+  static const _designHeight = 768.0;
 
   //logic size in device
   static Size? _logicSize;
@@ -33,7 +33,7 @@ class SizeUtil {
   }
 
   //@param w is the design w;
-  static double  getAxisX(double w) {
+  static double getAxisX(double w) {
     return (w * width) / _designWidth;
   }
 

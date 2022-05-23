@@ -10,6 +10,7 @@ const Color colorOnAccent = Color(0xffffffff);
 const Color colorError = Color(0xffb71c1c);
 
 const Color colorCard = Color(0xff515050);
+const Color colorDivider = Color(0xff404040);
 
 // Text Color
 const Color colorUsername = Color(0xff9B9B9B);

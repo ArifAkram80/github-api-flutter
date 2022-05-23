@@ -41,6 +41,7 @@ abstract class AppThemeData {
         color: colorSecondary.withOpacity(.5),
       ),
     ),
+    dividerColor: colorDivider,
   );
 
   static ThemeData getThemeData() {
