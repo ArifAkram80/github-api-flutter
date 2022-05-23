@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
+
 import '../app/modules/commits/binding.dart';
-import '../app/modules/commits/page.dart';
-import '../app/modules/user/binding.dart';
-import '../app/modules/user/page.dart';
 import '../app/modules/dashboard/binding.dart';
 import '../app/modules/dashboard/page.dart';
+import '../app/modules/user/binding.dart';
+
 part './routes.dart';
 
 abstract class AppPages {
@@ -13,16 +13,10 @@ abstract class AppPages {
       name: Routes.dashboard,
       page: () => const DashboardPage(),
       binding: DashboardBinding(),
-    ),
-    GetPage(
-      name: Routes.commits,
-      page: () => const CommitsPage(),
-      binding: CommitsBinding(),
-    ),
-    GetPage(
-      name: Routes.user,
-      page: () => const UserPage(),
-      binding: UserBinding(),
+      bindings: [
+        CommitsBinding(),
+        UserBinding(),
+      ],
     ),
   ];
 }

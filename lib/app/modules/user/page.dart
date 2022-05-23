@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:github_api_flutter/app/modules/user/controller.dart';
 
 import '../../../core/utils/size_util.dart';
 import '../../../core/values/images.dart';
@@ -12,6 +13,7 @@ class UserPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<UserController>();
     return Scaffold(
       body: Container(
         alignment: Alignment.topCenter,
