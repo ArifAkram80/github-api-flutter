@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:github_api_flutter/app/data/models/user_profile/user_profile.dart';
 import '../../../../core/utils/size_util.dart';
 
 class UserNameInfo extends StatelessWidget {
-  const UserNameInfo({Key? key}) : super(key: key);
+  final UserProfile userProfile;
+  const UserNameInfo({required this.userProfile, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +15,9 @@ class UserNameInfo extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            "Francisco Miles",
-            style: Get.textTheme.headline5?.copyWith(color: Colors.white),
+            userProfile.name ?? "",
+            style: Get.textTheme.headline5
+                ?.copyWith(color: Colors.white, height: 0.795),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
@@ -22,7 +25,7 @@ class UserNameInfo extends StatelessWidget {
             height: SizeUtil.getAxisY(4),
           ),
           Text(
-            "@fransico_miles",
+            "@${userProfile.login ?? ""}",
             style: Get.textTheme.bodyText2?.copyWith(color: Colors.white),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,

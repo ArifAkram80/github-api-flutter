@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import '../commits/page.dart';
-import '../user/page.dart';
 
 import '../../../core/translations/languages/language_keys.dart';
 import '../../../core/utils/size_util.dart';
 import '../../../core/values/images.dart';
+import '../commits/page.dart';
+import '../user/page.dart';
 import 'controller.dart';
 
 class DashboardPage extends StatelessWidget {

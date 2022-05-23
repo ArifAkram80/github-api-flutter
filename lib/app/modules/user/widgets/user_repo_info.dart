@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../../../core/utils/size_util.dart';
+import '../../../data/models/user_profile/user_profile.dart';
 
 class UserRepoInfo extends StatelessWidget {
-  const UserRepoInfo({Key? key}) : super(key: key);
+  final UserProfile userProfile;
+  const UserRepoInfo({required this.userProfile, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +16,7 @@ class UserRepoInfo extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Public Repos: 2",
+            "Public Repos: ${userProfile.publicRepos}",
             style: Get.textTheme.bodyText1?.copyWith(color: Colors.white),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
@@ -22,7 +25,7 @@ class UserRepoInfo extends StatelessWidget {
             height: SizeUtil.getAxisY(8),
           ),
           Text(
-            "Public Gists: 5",
+            "Public Gists: ${userProfile.publicGists}",
             style: Get.textTheme.bodyText1?.copyWith(color: Colors.white),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
@@ -31,7 +34,7 @@ class UserRepoInfo extends StatelessWidget {
             height: SizeUtil.getAxisY(8),
           ),
           Text(
-            "Private Repos: 5",
+            "Private Repos: ${userProfile.publicRepos}",
             style: Get.textTheme.bodyText1?.copyWith(color: Colors.white),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
