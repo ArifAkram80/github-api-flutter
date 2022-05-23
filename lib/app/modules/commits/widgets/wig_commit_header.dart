@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 
 import '../../../../core/utils/size_util.dart';
 
-class CommitHeader extends StatelessWidget {
-  const CommitHeader({Key? key}) : super(key: key);
+class CommitHeaderWidget extends StatelessWidget {
+  const CommitHeaderWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

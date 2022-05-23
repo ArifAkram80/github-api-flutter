@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:github_api_flutter/core/values/colors.dart';
+
+import '../../core/values/colors.dart';
 
 class CircularNetworkImage extends StatelessWidget {
   final String? url;

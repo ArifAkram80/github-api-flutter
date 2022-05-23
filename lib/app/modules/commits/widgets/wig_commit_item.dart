@@ -3,11 +3,13 @@ import 'package:get/get.dart';
 
 import '../../../../core/utils/size_util.dart';
 import '../../../../core/values/colors.dart';
-import '../../../../core/values/images.dart';
+import '../../../data/models/commits_list_model/commits_list_model.dart';
 import '../../../widgets/wig_circular_network_image.dart';
+import '../../../../core/extensions/ext_datetime.dart';
 
-class CommitListItem extends StatelessWidget {
-  const CommitListItem({Key? key}) : super(key: key);
+class CommitListItemWidget extends StatelessWidget {
+  final CommitsListModel item;
+  const CommitListItemWidget({required this.item, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class CommitListItem extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  "Add module to login and register so that others can add features.",
+                  "${item.commit?.message}",
                   style: Get.textTheme.bodyText1,
                   maxLines: 2,
                   textAlign: TextAlign.start,
@@ -38,7 +40,7 @@ class CommitListItem extends StatelessWidget {
                 width: SizeUtil.getAxisX(12),
               ),
               Text(
-                "09:18",
+                "${item.commit?.author?.date?.toDate()}",
                 style: Get.textTheme.caption?.copyWith(
                   color: colorDateTime,
                 ),
@@ -55,12 +57,15 @@ class CommitListItem extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 CircularNetworkImage(
-                    url: imgDummyImage, dimension: SizeUtil.getAxisX(20)),
+                  url: item.author?.avatarUrl,
+                  dimension: SizeUtil.getAxisX(20),
+                  boxFit: BoxFit.cover,
+                ),
                 SizedBox(
                   width: SizeUtil.getAxisX(8),
                 ),
                 Text(
-                  "Eduardo Mckinney",
+                  "${item.commit?.author?.name}",
                   style: Get.textTheme.caption?.copyWith(
                     color: colorUsername,
                   ),

@@ -40,6 +40,7 @@ dependencies:
   cached_network_image:
   shimmer: 
   logger: any
+  intl: any
   #used for testing on diff devices. 
   device_preview:
 
