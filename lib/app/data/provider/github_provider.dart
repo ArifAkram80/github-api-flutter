@@ -24,7 +24,7 @@ class GithubProvider extends ApiClient {
       );
     } on SocketException {
       return Result.error("No Internet Connection");
-    } on ResourceNotFoundException catch (e) {
+    } on ResourceNotFoundException {
       return Result.error("Invalid User not found");
     } on CustomException catch (e) {
       return Result.error("Error: Fetching user ${e.reason}");
