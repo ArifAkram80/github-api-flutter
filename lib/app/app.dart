@@ -1,8 +1,9 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../core/theme/app_theme.dart';
 
+import '../core/theme/app_theme.dart';
 import '../routes/pages.dart';
 
 class App extends StatelessWidget {
@@ -12,6 +13,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: kDebugMode,
+      useInheritedMediaQuery: true,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
       initialRoute: Routes.dashboard,
       defaultTransition: Transition.fade,
       themeMode: ThemeMode.system,

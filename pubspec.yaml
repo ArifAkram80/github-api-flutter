@@ -41,7 +41,9 @@ dependencies:
   shimmer: 
   logger: 
   dio:
-  json_annotation: 
+  json_annotation:
+  #used for testing on diff devices. 
+  device_preview:
 
 dev_dependencies:
   flutter_test:
