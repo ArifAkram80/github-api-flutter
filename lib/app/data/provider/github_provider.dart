@@ -16,8 +16,8 @@ class GithubProvider extends ApiClient {
   GithubProvider() : super(baseURL: AppInfo.api.baseUrl);
 
   Future<Result<UserProfile>> getUserProfile(String username) async {
-    final response = await getHttp(endPoint: "users/$username");
     try {
+      final response = await getHttp(endPoint: "users/$username");
       final userResponse = _response(response);
       return Result.success(
         UserProfile.fromJson(
@@ -25,6 +25,7 @@ class GithubProvider extends ApiClient {
         ),
       );
     } on SocketException {
+      debugPrint("$tag error socketException");
       return Result.error("No Internet Connection");
     } on ResourceNotFoundException {
       return Result.error("Invalid User not found");
@@ -40,14 +41,14 @@ class GithubProvider extends ApiClient {
       required String repo,
       int? pageSize,
       int? page}) async {
-    final response = await getHttp(
-      endPoint: "repos/$owner/$repo/commits",
-      query: {
-        if (pageSize != null) "per_page": pageSize.toString(),
-        if (page != null) "page": page.toString(),
-      },
-    );
     try {
+      final response = await getHttp(
+        endPoint: "repos/$owner/$repo/commits",
+        query: {
+          if (pageSize != null) "per_page": pageSize.toString(),
+          if (page != null) "page": page.toString(),
+        },
+      );
       final userResponse = _response(response);
       return Result.success((jsonDecode(userResponse.body) as List<dynamic>)
           .map((e) => CommitsListModel.fromJson(e))
