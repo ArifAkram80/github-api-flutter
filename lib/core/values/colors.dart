@@ -11,6 +11,7 @@ const Color colorError = Color(0xffb71c1c);
 
 const Color colorCard = Color(0xff515050);
 const Color colorDivider = Color(0xff404040);
+const Color colorShimmer = Color(0xff1e1e1e);
 
 // Text Color
 const Color colorUsername = Color(0xff9B9B9B);

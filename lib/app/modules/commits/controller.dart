@@ -10,6 +10,8 @@ class CommitsController extends GetxController {
   static const repo = "flutter";
   static const pageSize = 10;
 
+  int pageNumber = 1;
+
   final CommitsRepository repository;
   CommitsController(this.repository);
 
@@ -18,15 +20,20 @@ class CommitsController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    getCommitList();
+    _getCommitList();
   }
 
-  Future<void> getCommitList() async {
+  Future<void> onRetry() async {
+    pageNumber = 1;
+    _getCommitList();
+  }
+
+  Future<void> _getCommitList() async {
     commitsList.value = Result.loading();
     commitsList.value = await repository.getCommitsList(
       owner: owner,
       repo: repo,
-      page: 1,
+      page: pageNumber,
       pageSize: 10,
     );
   }

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:github_api_flutter/app/modules/commits/widgets/wig_commits_list.dart';
+import 'package:github_api_flutter/app/widgets/wig_error_state.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../core/networking/api_result.dart';
 import 'controller.dart';
+import 'widgets/shimmer_commits.dart';
 import 'widgets/wig_commit_header.dart';
-import 'widgets/wig_commits_list.dart';
 
 class CommitsPage extends StatelessWidget {
   const CommitsPage({Key? key}) : super(key: key);
@@ -22,13 +24,13 @@ class CommitsPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
+          mainAxisSize: MainAxisSize.max,
           children: [
             const CommitHeaderWidget(),
             SizedBox(
               height: 1.5.w,
             ),
-            Flexible(
+            Expanded(
               child: getCommitsView(controller),
             ),
           ],
@@ -43,13 +45,31 @@ class CommitsPage extends StatelessWidget {
         var res = controller.commitsList.value;
         switch (res.status) {
           case Status.loading:
-            return const CircularProgressIndicator();
+            return ListView.builder(
+              itemCount: 10,
+              itemBuilder: (_, __) => const ShimmerCommitsItem(),
+            );
           case Status.success:
-            return CommitsListWidget(listOfCommits: res.data!);
+            return RefreshIndicator(
+              onRefresh: () async {
+                return controller.onRetry();
+              },
+              child: CommitsListWidget(listOfCommits: res.data!),
+            );
           case Status.error:
-            return Text("Error: ${res.message}");
-          default:
-            return Container();
+            return WigErrorState(
+              message: "Opps! Somthing went worng \n${res.message ?? ""}",
+              onRetry: () {
+                controller.onRetry();
+              },
+            );
+          case Status.empty:
+            return WigErrorState(
+              message: "Opps! Empty list \n No Data Is Available.",
+              onRetry: () {
+                controller.onRetry();
+              },
+            );
         }
       },
     );
