@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:github_api_flutter/app/widgets/wig_error_state.dart';
+import '../../widgets/wig_error_state.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../core/networking/api_result.dart';

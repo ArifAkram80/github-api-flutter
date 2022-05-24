@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:github_api_flutter/app/modules/commits/widgets/wig_commits_list.dart';
-import 'package:github_api_flutter/app/widgets/wig_error_state.dart';
+import 'widgets/wig_commits_list.dart';
+import '../../widgets/wig_error_state.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../core/networking/api_result.dart';
@@ -49,13 +49,7 @@ class CommitsPage extends StatelessWidget {
               itemCount: 10,
               itemBuilder: (_, __) => const ShimmerCommitsItem(),
             );
-          case Status.success:
-            return RefreshIndicator(
-              onRefresh: () async {
-                return controller.onRetry();
-              },
-              child: CommitsListWidget(listOfCommits: res.data!),
-            );
+
           case Status.error:
             return WigErrorState(
               message: "Opps! Somthing went worng \n${res.message ?? ""}",
@@ -63,12 +57,13 @@ class CommitsPage extends StatelessWidget {
                 controller.onRetry();
               },
             );
-          case Status.empty:
-            return WigErrorState(
-              message: "Opps! Empty list \n No Data Is Available.",
-              onRetry: () {
-                controller.onRetry();
+
+          default:
+            return RefreshIndicator(
+              onRefresh: () async {
+                return controller.onRetry();
               },
+              child: const CommitsListWidget(),
             );
         }
       },

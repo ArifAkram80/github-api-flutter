@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
+
 import '../../../data/models/user_profile/user_profile.dart';
 
 class UserNameInfo extends StatelessWidget {
