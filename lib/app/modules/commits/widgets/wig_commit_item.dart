@@ -40,7 +40,7 @@ class CommitListItemWidget extends StatelessWidget {
                 width: 3.2.w,
               ),
               Text(
-                "${item.commit?.author?.date?.toDate()}",
+                "${item.commit?.author?.date?.toTimeWeekdayDate()}",
                 style: Get.textTheme.bodyText2?.copyWith(
                   color: colorDateTime,
                 ),
