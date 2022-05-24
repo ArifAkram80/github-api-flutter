@@ -17,6 +17,10 @@ class UserController extends GetxController {
     _getUserInfo();
   }
 
+  Future<void> onRetry() async {
+    _getUserInfo();
+  }
+
   void _getUserInfo() async {
     userProfile.value = Result.loading();
     userProfile.value = await repository.getUserProfile(username: "dnfield");

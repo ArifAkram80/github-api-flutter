@@ -15,7 +15,7 @@ class WigErrorState extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
-          "${message ?? ""}",
+          message ?? "",
           style: Get.textTheme.bodyText1,
           maxLines: 3,
           textAlign: TextAlign.center,

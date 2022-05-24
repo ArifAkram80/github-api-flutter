@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:github_api_flutter/app/widgets/wig_error_state.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../core/networking/api_result.dart';
 import '../../data/models/user_profile/user_profile.dart';
 import '../../widgets/wig_circular_network_image.dart';
 import 'controller.dart';
+import 'widgets/shimmer_user_profile.dart';
 import 'widgets/user_name_info.dart';
 import 'widgets/user_repo_info.dart';
 
@@ -24,11 +26,17 @@ class UserPage extends StatelessWidget {
             var res = controller.userProfile.value;
             switch (res.status) {
               case Status.loading:
-                return const CircularProgressIndicator.adaptive();
+                return const ShimmerUserPofile();
               case Status.success:
+                //  return const ShimmerUserPofile();
                 return getUserInfo(res.data!);
               case Status.error:
-                return const Text("Error");
+                return WigErrorState(
+                  message: "Opps! Somthing went wrong! \n${res.message ?? ""}",
+                  onRetry: () {
+                    controller.onRetry();
+                  },
+                );
               default:
                 return Container();
             }

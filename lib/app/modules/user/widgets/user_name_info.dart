@@ -26,7 +26,7 @@ class UserNameInfo extends StatelessWidget {
           ),
           Text(
             "@${userProfile.login ?? ""}",
-            style: Get.textTheme.bodyText2?.copyWith(color: Colors.white),
+            style: Get.textTheme.bodyText1?.copyWith(color: Colors.white),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
