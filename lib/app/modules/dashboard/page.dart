@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../../../core/translations/languages/language_keys.dart';
-import '../../../core/utils/size_util.dart';
 import '../../../core/values/images.dart';
 import '../commits/page.dart';
 import '../user/page.dart';
@@ -14,8 +13,6 @@ class DashboardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SizeUtil.size = MediaQuery.of(context)
-        .size; // Initialize the size for one time in intital screen.
     return GetBuilder<DashboardController>(builder: (controller) {
       return SafeArea(
         child: Scaffold(

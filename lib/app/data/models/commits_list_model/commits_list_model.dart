@@ -1,4 +1,3 @@
-import 'package:github_api_flutter/app/data/models/user_profile/user_profile.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import 'author.dart';

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
-import '../../../../core/utils/size_util.dart';
+import '../../../../core/extensions/ext_datetime.dart';
 import '../../../../core/values/colors.dart';
 import '../../../data/models/commits_list_model/commits_list_model.dart';
 import '../../../widgets/wig_circular_network_image.dart';
-import '../../../../core/extensions/ext_datetime.dart';
 
 class CommitListItemWidget extends StatelessWidget {
   final CommitsListModel item;
@@ -14,10 +14,10 @@ class CommitListItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: SizeUtil.getAxisX(375),
+      width: 100.w,
       padding: EdgeInsets.symmetric(
-        vertical: SizeUtil.getAxisY(12),
-        horizontal: SizeUtil.getAxisX(4),
+        vertical: 3.2.w,
+        horizontal: 0.5.h,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -37,36 +37,37 @@ class CommitListItemWidget extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                width: SizeUtil.getAxisX(12),
+                width: 3.2.w,
               ),
               Text(
                 "${item.commit?.author?.date?.toDate()}",
-                style: Get.textTheme.caption?.copyWith(
+                style: Get.textTheme.bodyText2?.copyWith(
                   color: colorDateTime,
                 ),
               ),
             ],
           ),
           SizedBox(
-            height: SizeUtil.getAxisY(8),
+            height: 1.01.h,
           ),
           SizedBox(
-            height: SizeUtil.getAxisY(20),
+            height: 2.5.h,
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
                 CircularNetworkImage(
                   url: item.author?.avatarUrl,
-                  dimension: SizeUtil.getAxisX(20),
+                  dimension: 5.33.w,
                   boxFit: BoxFit.cover,
                 ),
                 SizedBox(
-                  width: SizeUtil.getAxisX(8),
+                  width: 2.13.w,
                 ),
                 Text(
                   "${item.commit?.author?.name}",
-                  style: Get.textTheme.caption?.copyWith(
+                  style: Get.textTheme.bodyText2?.copyWith(
                     color: colorUsername,
                   ),
                 ),

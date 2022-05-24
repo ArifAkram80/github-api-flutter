@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
-import '../../../../core/utils/size_util.dart';
 import '../../../data/models/user_profile/user_profile.dart';
 
 class UserRepoInfo extends StatelessWidget {
@@ -22,7 +22,7 @@ class UserRepoInfo extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
           ),
           SizedBox(
-            height: SizeUtil.getAxisY(8),
+            height: 1.h,
           ),
           Text(
             "Public Gists: ${userProfile.publicGists}",
@@ -31,7 +31,7 @@ class UserRepoInfo extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
           ),
           SizedBox(
-            height: SizeUtil.getAxisY(8),
+            height: 1.h,
           ),
           Text(
             "Private Repos: ${userProfile.publicRepos}",

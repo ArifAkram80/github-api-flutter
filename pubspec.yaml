@@ -41,6 +41,7 @@ dependencies:
   shimmer: 
   logger: any
   intl: any
+  sizer: ^2.0.15
   #used for testing on diff devices. 
   device_preview:
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
-import '../../../../core/utils/size_util.dart';
 import '../../../data/models/commits_list_model/commits_list_model.dart';
 import 'wig_commit_item.dart';
 
@@ -15,7 +15,7 @@ class CommitsListWidget extends StatelessWidget {
 
     return Scrollbar(
       controller: scrollController,
-      thickness: 1,
+      thickness: 0.2.w,
       child: ListView.separated(
         controller: scrollController,
         itemCount: 10,
@@ -25,8 +25,8 @@ class CommitsListWidget extends StatelessWidget {
           );
         },
         separatorBuilder: (ctx, index) => Divider(
-          height: SizeUtil.getAxisY(1),
-          thickness: SizeUtil.getAxisY(1),
+          height: .123.h,
+          thickness: .123.h,
         ),
       ),
     );

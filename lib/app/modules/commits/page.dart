@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../../core/networking/api_result.dart';
-import '../../../core/utils/size_util.dart';
 import 'controller.dart';
 import 'widgets/wig_commit_header.dart';
 import 'widgets/wig_commits_list.dart';
@@ -16,8 +16,8 @@ class CommitsPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.symmetric(
-          horizontal: SizeUtil.getAxisX(13),
-          vertical: SizeUtil.getAxisY(11),
+          horizontal: 1.8.w,
+          vertical: 1.5.h,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -26,7 +26,7 @@ class CommitsPage extends StatelessWidget {
           children: [
             const CommitHeaderWidget(),
             SizedBox(
-              height: SizeUtil.getAxisY(10),
+              height: 1.5.w,
             ),
             Flexible(
               child: getCommitsView(controller),

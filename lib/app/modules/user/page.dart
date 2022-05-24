@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../../core/networking/api_result.dart';
-import '../../../core/utils/size_util.dart';
 import '../../data/models/user_profile/user_profile.dart';
 import '../../widgets/wig_circular_network_image.dart';
 import 'controller.dart';
@@ -18,8 +18,7 @@ class UserPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         alignment: Alignment.topCenter,
-        margin: EdgeInsets.symmetric(
-            vertical: SizeUtil.getAxisY(30), horizontal: SizeUtil.getAxisX(16)),
+        margin: EdgeInsets.symmetric(vertical: 3.69.h, horizontal: 4.26.w),
         child: Obx(
           () {
             var res = controller.userProfile.value;
@@ -46,14 +45,14 @@ class UserPage extends StatelessWidget {
         children: [
           CircularNetworkImage(
             url: userProfile.avatarUrl,
-            dimension: SizeUtil.getAxisX(164),
+            dimension: 43.75.w,
           ),
           SizedBox(
-            height: SizeUtil.getAxisY(16),
+            height: 2.0.h,
           ),
           UserNameInfo(userProfile: userProfile),
           SizedBox(
-            height: SizeUtil.getAxisY(16),
+            height: 2.0.h,
           ),
           Text(
             "Bio: ${userProfile.bio ?? ""}",
@@ -65,7 +64,7 @@ class UserPage extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
           ),
           SizedBox(
-            height: SizeUtil.getAxisY(16),
+            height: 2.0.h,
           ),
           UserRepoInfo(userProfile: userProfile),
         ],

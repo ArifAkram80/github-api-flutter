@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'repository.dart';
 
 class DashboardController extends GetxController {
-  static const tag = "HomeController";
+  static const tag = "DashboardController";
   final DashboardRepository repository;
   DashboardController(this.repository);
 

@@ -59,7 +59,7 @@ class GithubProvider extends ApiClient {
     } on CustomException catch (e) {
       return Result.error("Error: Fetching user ${e.reason}");
     } catch (e, stt) {
-      debugPrint("$tag error ${e} ${stt}");
+      debugPrint("$tag error $e $stt");
       return Result.error("Unknown Error.");
     }
   }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../../core/utils/size_util.dart';
+import 'package:sizer/sizer.dart';
 
 class CommitHeaderWidget extends StatelessWidget {
   const CommitHeaderWidget({Key? key}) : super(key: key);
@@ -9,7 +8,7 @@ class CommitHeaderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: SizeUtil.getAxisY(32),
+      height: 2.1.h,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -24,12 +23,14 @@ class CommitHeaderWidget extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: SizeUtil.getAxisX(8),
+            width: 1.5.w,
           ),
           Card(
-            margin: EdgeInsets.symmetric(horizontal: SizeUtil.getAxisX(8)),
+            margin: EdgeInsets.symmetric(
+              horizontal: 1.5.w,
+            ),
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: SizeUtil.getAxisX(8)),
+              padding: EdgeInsets.symmetric(horizontal: 1.5.w, vertical: 0.5),
               child: Text(
                 "master",
                 style: Get.textTheme.headline6,

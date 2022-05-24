@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../../core/utils/size_util.dart';
+import 'package:sizer/sizer.dart';
 import '../../../data/models/user_profile/user_profile.dart';
 
 class UserNameInfo extends StatelessWidget {
@@ -23,7 +22,7 @@ class UserNameInfo extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
           ),
           SizedBox(
-            height: SizeUtil.getAxisY(4),
+            height: .5.h,
           ),
           Text(
             "@${userProfile.login ?? ""}",
