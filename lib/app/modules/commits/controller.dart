@@ -49,7 +49,7 @@ class CommitsController extends GetxController {
   // this can be optimised with a backend api
   // which allows rexeg as a query parameter for commit author.
 
-  _getFilteredCommitsList() async {
+  Future<void> _getFilteredCommitsList() async {
     while (filteredList.length < maxAuthor && canLoadMore.isTrue) {
       if (filteredList.isEmpty) commitsList.value = Result.loading();
       await _getCommitList();
@@ -60,15 +60,7 @@ class CommitsController extends GetxController {
       if (data.length < pageSize - 1) {
         canLoadMore.value = false;
       }
-      for (var element in data) {
-        if (filteredList.length >= maxAuthor) break;
-        String? name = element.commit?.author?.name;
-        if (name == null) return;
-
-        if (name.contains(RegExp(r"^[^gx]*$", caseSensitive: false))) {
-          filteredList.add(element);
-        }
-      }
+      _filterTheDataAddToList(data);
     }
     debugPrint("$tag filteredList len ${filteredList.length}");
   }
@@ -80,5 +72,17 @@ class CommitsController extends GetxController {
       page: pageNumber,
       pageSize: pageSize,
     );
+  }
+
+  void _filterTheDataAddToList(List<CommitsListModel> commits) {
+    for (var commit in commits) {
+      if (filteredList.length >= maxAuthor) break;
+      String? name = commit.commit?.author?.name;
+      if (name == null) return;
+
+      if (name.contains(RegExp(r"^[^gx]*$"))) {
+        filteredList.add(commit);
+      }
+    }
   }
 }
