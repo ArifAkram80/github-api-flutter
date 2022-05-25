@@ -1,16 +1,11 @@
 # github_api_flutter
 
-A new Flutter project.
+A flutter project to fetch user info and commits from flutter repo using flutter.
 
-## Getting Started
+Project was developed following GetX design pattern.
+More can be learned from https://github.com/kauemurakami/getx_pattern.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Features:
+1. Showing a public profile from github.
+2. Showing last 10 commits from flutter master branch.
+3. Filtering the commits with commits author name.
