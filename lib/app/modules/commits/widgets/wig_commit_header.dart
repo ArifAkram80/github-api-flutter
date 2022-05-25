@@ -8,7 +8,7 @@ class CommitHeaderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 2.1.h,
+      height: 2.7.h,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -30,7 +30,9 @@ class CommitHeaderWidget extends StatelessWidget {
               horizontal: 1.5.w,
             ),
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 1.5.w, vertical: 0.5),
+              padding: EdgeInsets.symmetric(
+                horizontal: 1.5.w,
+              ),
               child: Text(
                 "master",
                 style: Get.textTheme.headline6,
